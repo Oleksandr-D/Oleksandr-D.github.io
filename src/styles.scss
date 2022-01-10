@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(187, 229, 253);
+  font-family: 'Arial Narrow Bold', sans-serif;
+}
+
+header {
+  font-size: 30px;
+  justify-content: center;
+  display: flex;
+}
+
+main {
+  margin: 50px 20px;
+}
