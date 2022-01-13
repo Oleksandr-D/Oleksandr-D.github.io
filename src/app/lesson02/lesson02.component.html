@@ -4,19 +4,22 @@
     <form class="user-form">
       <div class="login">
         <p>Login</p>
-        <input type="text" [(ngModel)]="login" name="login" placeholder="Enter login" required>
+        <input type="text" [(ngModel)]="login" id="log" name="login" placeholder="Enter login"
+          title="Login must be over 2" pattern="^[a-zA-Z]{3,16}$" required>
       </div>
       <div class="password">
         <p>Password</p>
-        <input type="password" [(ngModel)]="password" name="password" placeholder="Enter password" required>
+        <input type="password" [(ngModel)]="password" id="paswd" name="password" placeholder="Enter password"
+          title="password must be over 3" pattern="^[a-zA-Z0-9]{4,16}$" required>
       </div>
       <div class="email">
         <p>Email address</p>
-        <input type="email" [(ngModel)]="email" name="email" placeholder="Enter email" required>
+        <input type="email" [(ngModel)]="email" id="em" name="email" placeholder="Enter email" title="example@mail.com"
+          required>
       </div>
       <div class="submit">
-        <!-- <input type="submit" (click)="newUser()"  value="Add User"> -->
-        <input type="submit" (click)="newUser()" value="Add User" *ngIf="!editStatus" [disabled]="!person">
+        <input type="submit" id="addUser" (click)="newUser()" value="Add User" *ngIf="!editStatus"
+          [disabled]="addUserStatus">
         <input type="submit" id="edit-user" (click)="updateUser()" value="Edit User" *ngIf="editStatus">
       </div>
     </form>

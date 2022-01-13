@@ -9,7 +9,7 @@ import {
   styleUrls: ['./lesson02.component.scss']
 })
 export class Lesson02Component implements OnInit {
-  public modalWindow = false;
+  public modalWindow = true;
   public login!: string;
   public password!: any;
   public email!: string;
@@ -17,7 +17,7 @@ export class Lesson02Component implements OnInit {
   public editStatus = false;
   public userForm = [{
     login: 'exemple',
-    password: '12345',
+    password: '1234',
     email: 'exemple@gmail.com'
   }];
   public person = {
@@ -25,6 +25,13 @@ export class Lesson02Component implements OnInit {
     password: '',
     email: ''
   };
+  public log!: any;
+  public paswd!: any;
+  public em!: any;
+  public loginRegExp: RegExp = /^[a-zA-Z]{3,16}$/;
+  public emailRegExp: RegExp = /^[a-zA-Z0-9_.&#]+[^\s@]+@[^\s@]+[.][^\s@\W]{1,3}$/;
+  public paswdRegExp: RegExp = /^[a-zA-Z0-9]{4,16}$/;
+  public addUserStatus = false;
   constructor() {}
 
   ngOnInit(): void {}
@@ -34,7 +41,8 @@ export class Lesson02Component implements OnInit {
   };
   //button add user
   newUser(): void {
-    if (this.login.length > 1 && this.password.length > 4 && this.email.length > 3) {
+    this.check();
+    if (this.addUserStatus) {
       this.person = {
         login: '',
         password: '',
@@ -47,6 +55,7 @@ export class Lesson02Component implements OnInit {
       this.login = "";
       this.password = "";
       this.email = "";
+      this.addUserStatus = false;
     }
   }
   //button delete 
@@ -63,7 +72,8 @@ export class Lesson02Component implements OnInit {
   }
   //button Edit User
   updateUser(): void {
-    if (this.login.length > 1 && this.password.length > 4 && this.email.length > 3) {
+    this.check();
+    if (this.addUserStatus) {
       this.userForm[this.editIndex].login = this.login;
       this.userForm[this.editIndex].password = this.password;
       this.userForm[this.editIndex].email = this.email;
@@ -71,6 +81,22 @@ export class Lesson02Component implements OnInit {
       this.login = '';
       this.password = '';
       this.email = '';
+      this.addUserStatus = false;
     }
   }
-}
+  // input validation
+  getS = (selector: any) => document.querySelector(selector);
+  check() {
+    this.log = this.loginRegExp.test(this.getS('#log').value);
+    this.paswd = this.paswdRegExp.test(this.getS('#paswd').value);
+    this.em = this.emailRegExp.test(this.getS('#em').value);
+    if (this.log && this.paswd && this.em) {
+      this.addUserStatus = true;
+      console.log('User created')
+    } else {
+      this.addUserStatus = false;
+      alert('Check the entered data')
+    }
+  }
+
+};
