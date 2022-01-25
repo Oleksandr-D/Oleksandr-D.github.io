@@ -1,4 +1,3 @@
-/* You can add global styles to this file, and also import other style files */
 * {
   margin: 0px;
   padding: 0px;
@@ -6,7 +5,9 @@
 }
 
 body {
-  background-color: rgb(187, 229, 253);
+  background: #00416A;
+  background: -webkit-linear-gradient(to right, #E4E5E6, #00416A);
+  background: linear-gradient(to right, #E4E5E6, #00416A);
   font-family: 'Arial Narrow Bold', sans-serif;
 }
 

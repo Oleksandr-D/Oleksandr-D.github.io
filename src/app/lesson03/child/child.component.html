@@ -1,0 +1,35 @@
+<table>
+  <thead>
+    <tr>
+      <th>№</th>
+      <th class="coll-2">Task</th>
+      <th>Check</th>
+      <th class="coll-4">Done/In progress</th>
+      <th>Edit</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr id="light-row" *ngFor="let tasks of taskList; index as i">
+      <td>{{1+i}}</td>
+      <td class="coll-2">{{tasks.inputTask}}</td>
+      <td><input class="checkbox" type="checkbox" (click)="chekbox(i)"></td>
+      <td class="coll-4" [style.color]="tasks.check ? 'green' : 'red'"
+        [textContent]="tasks.check ? 'Done' : 'InProgress' "></td>
+      <td><button id="edit" (click)="editTask(i)" [disabled]="tasks.check">Edit</button></td>
+      <td><button id="delete-task" (click)="deleteTask(i)" [disabled]="tasks.buttonDelete">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
+<ng-container *ngIf="editStatus && taskList.length !== 0">
+  <div class="edit-user-window-wraper">
+    <input type="text" id="edit-user" [(ngModel)]="inputTask">
+    <input type="button" id="save-task" (click)="saveEditedUser()" value="Save">
+  </div>
+</ng-container>
+<ng-container *ngIf="taskList.length === 0">
+  <div class="empty">Task list is empty</div>
+</ng-container>
+<ng-container *ngIf="taskList.length === 6">
+  <div class="empty" [style.color]="'blue'">Good! Task list is full.</div>
+</ng-container>

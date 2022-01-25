@@ -9,7 +9,7 @@ import {
   styleUrls: ['./lesson02.component.scss']
 })
 export class Lesson02Component implements OnInit {
-  public modalWindow = true;
+  public modalWindow = false;
   public login!: string;
   public password!: any;
   public email!: string;
