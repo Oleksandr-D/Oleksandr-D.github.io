@@ -49,17 +49,23 @@
   margin-top: 30px;
 }
 
+h1,
+h2 {
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 h2 {
   margin-top: 5px;
 }
 
 input[type="text"] {
   width: 515px;
-  height: 35px;
+  height: 37px;
   outline: none;
   padding-left: 10px;
-  font-size: 15px;
-  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.425) inset;
+  font-size: 17px;
+  box-shadow: 0px 0px 6px 1px rgba(0, 43, 83, 0.993) inset;
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #add {
@@ -79,6 +85,7 @@ input[type="text"] {
   border-bottom-right-radius: 225px 15px;
   border-top-left-radius: 255px 15px;
   border-top-right-radius: 15px 225px;
+  font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 #add:hover {

@@ -1,0 +1,58 @@
+<div (click)="showModal()" class="lesson-item">Lesson 4
+  <p class="lesson-item-title">Pipes</p>
+  <p class="lesson-item-title"></p>
+</div>
+<ng-container *ngIf="modalWindow">
+  <div class="wrapper">
+    <header>
+      <div><b>My phone book</b></div>
+    </header>
+    <div class="input-wraper">
+      <input type="text" [(ngModel)]="field" placeholder="Search text goes here" required>
+      <button (click)="addPhone()" id="add-phone">Add phone</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>First name<button (click)="nameSort('asc')" class="sort-buttons">▲</button><button
+              (click)="nameSort('desc')" class="sort-buttons">▼</button></th>
+          <th>Last name<button (click)="lastNameSort('as')" class="sort-buttons">▲</button><button
+              (click)="lastNameSort('des')" class="sort-buttons">▼</button></th>
+          <th>Number<button (click)="numberSort('a')" class="sort-buttons">▲</button><button (click)="numberSort('d')"
+              class="sort-buttons">▼</button></th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="light-row" *ngFor="let cont of contacts | search:field | sort:type ; index as i">
+          <td>{{cont.first_name}}</td>
+          <td>{{cont.last_name}}</td>
+          <td>{{cont.phone}}</td>
+          <td><button (click)="edit(i)" id="edit-contact">Edit</button></td>
+          <td><button (click)="deleteContact(i)" id="delete-contact">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+    <ng-container *ngIf="contacts.length === 0">
+      <div class="empty">Add contacts to your phone book</div>
+    </ng-container>
+    <ng-container *ngIf="contacts.length === 7">
+      <div class="empty" [style.color]="'blue'">Your phone book is full</div>
+    </ng-container>
+    <ng-container *ngIf="newContactWindow">
+      <div class="modal-wraper">
+        <div class="inputs-wraper">
+          <span class="ap"><b>Add phone</b></span>
+          <span (click)="closeModal()" id="close-modal"><b>✖</b></span>
+          <input [(ngModel)]="firstName" id="modal-input" type="text" placeholder="First name goes here">
+          <input [(ngModel)]="lastName" id="modal-input" type="text" placeholder="Last name goes here">
+          <input [(ngModel)]="phone" id="modal-input" type="text" placeholder="Phone goes here">
+          <div *ngIf="!editStatus" (click)="saveNewContact()" class="ap"><button id="btnSave">Save</button></div>
+          <div *ngIf="editStatus" (click)="editContact()" class="ap"><button id="edit-contact">Edit Contact</button>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</ng-container>

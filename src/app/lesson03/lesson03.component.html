@@ -1,11 +1,11 @@
-<div (click)="showModal()" class="lesson-item">Lesson 3.
+<div (click)="showModal()" class="lesson-item">Lesson 3
   <p class="lesson-item-title">Interaction between components.</p>
-  <p class="lesson-item-title">@Input(), @Output(), EventEmmiter </p>
+  <p class="lesson-item-title"> Component life cycle. </p>
 </div>
 <ng-container *ngIf="modalWindow">
   <div class="wrapper">
     <h1>Plan your day!</h1>
-    <h2>User: Oleksandr Dolbnia. Count of tasks {{count}}</h2>
+    <h2>User: Oleksandr Dolbnia. Count of tasks <b>{{count}}</b></h2>
     <div class="input-wraper">
       <input type="text" id="input-task" [(ngModel)]="inputTask" name="task">
       <input type="button" id="add" value="Add" (click)="addTaskk()">

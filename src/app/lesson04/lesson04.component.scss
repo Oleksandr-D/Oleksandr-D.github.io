@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  border-radius: 5px;
+}
+
+.lesson-item {
+  width: 200px;
+  height: 50px;
+  font-size: 20px;
+  background-color: lightgray;
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+
+.lesson-item:hover {
+  color: white;
+  background-color: rgb(141, 141, 141);
+  cursor: pointer;
+}
+
+.lesson-item-title {
+  font-size: 10px;
+}
+
+.wrapper {
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  width: 1000px;
+  height: 600px;
+  background-color: rgba(236, 236, 236, 0.479);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 0px 10px 3px #949494;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+}
+
+.input-wraper {
+  width: 670px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  align-items: center;
+}
+
+input[type="text"] {
+  width: 515px;
+  height: 40px;
+  font-size: 20px;
+  outline: none;
+  padding-left: 10px;
+  box-shadow: 0px 0px 6px 1px rgba(0, 0, 0, 0.637) inset;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+input[type="text"]::placeholder {
+  color: rgba(82, 82, 82, 0.418)
+}
+
+#add-phone,
+#delete-contact,
+#edit-contact,
+#btnSave {
+  height: 40px;
+  position: relative;
+  background-color: black;
+  color: white;
+  padding: 0.8em 1.8em;
+  cursor: pointer;
+  user-select: none;
+  text-align: center;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  transition-duration: 0.4s;
+}
+
+#add-phone:hover,
+#delete-contact:hover,
+#edit-contact:hover,
+#btnSave:hover {
+  transition-duration: 0.1s;
+  background-color: #2b2b2b;
+}
+
+#add-phone::after,
+#delete-contact::after,
+#edit-contact::after,
+#btnSave::after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-radius: 5px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.5s;
+  box-shadow: 0 0 10px 40px white;
+}
+
+#add-phone:active::after,
+#delete-contact:active::after,
+#edit-contact:active::after,
+#btnSave:active::after {
+  box-shadow: 0 0 0 0 white;
+  position: absolute;
+  border-radius: 5px;
+  left: 0;
+  top: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+#add-phone:active,
+#delete-contact:active,
+#edit-contact:active,
+#btnSave:active {
+  top: 2px;
+}
+
+#delete-contact {
+  background-color: rgb(134, 10, 10);
+}
+
+#edit-contact {
+  background-color: rgb(182, 125, 1);
+}
+
+#edit-contact:hover {
+  background-color: rgb(202, 138, 0);
+}
+
+#edit-contact::after {
+  box-shadow: 0 0 10px 40px rgb(255, 191, 52);
+}
+
+#edit-contact:active::after {
+  box-shadow: 0 0 0 0 rgb(255, 255, 255);
+}
+
+#delete-contact:hover {
+  background-color: rgb(161, 13, 13);
+}
+
+#delete-contact::after {
+  box-shadow: 0 0 10px 40px rgb(255, 59, 59);
+}
+
+#delete-contact:active::after {
+  box-shadow: 0 0 0 0 rgb(255, 255, 255);
+}
+
+table {
+  width: 100%;
+  height: 100px;
+  border-collapse: collapse;
+  border-spacing: 0;
+  margin-top: 30px;
+  border-top: 2px solid rgb(180, 180, 180);
+}
+
+tr {
+  border-bottom: 2px solid rgb(180, 180, 180);
+  height: 50px;
+}
+
+td {
+  text-align: center;
+  border-radius: 0px;
+}
+
+#light-row:hover {
+  background: linear-gradient(to right, #cacaca4d, #00416a6e);
+}
+
+.sort-buttons {
+  width: 10px;
+  height: 10px;
+  margin-left: 5px;
+  background: none;
+}
+
+.sort-buttons:hover {
+  color: white;
+}
+
+.modal-wraper {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(168, 168, 168, 0.719);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs-wraper {
+  width: 50%;
+  height: 50%;
+  background-color: rgb(206, 206, 206);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  box-shadow: 0px 0px 10px 0px #000000;
+}
+
+#modal-input {
+  width: 80%;
+}
+
+.ap {
+  width: 95%;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+#btnSave {
+  width: 30%;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+#close-modal {
+  height: 20px;
+  cursor: pointer;
+}
+
+#close-modal:hover {
+  color: rgb(255, 255, 255);
+}
+
+.empty {
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
