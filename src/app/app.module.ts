@@ -12,6 +12,15 @@ import { Lesson04Component } from './lesson04/lesson04.component';
 import { SearchPipe } from './lesson04/search.pipe';
 import { SortPipe } from './lesson04/sort.pipe';
 
+import { Lesson05Component } from './lesson05/lesson05.component';
+import { HomeComponent } from './lesson05/home/home.component';
+import { WorksComponent } from './lesson05/works/works.component';
+import { CenzorComponent } from './lesson05/works/cenzor/cenzor.component';
+import { UserlistComponent } from './lesson05/works/userlist/userlist.component';
+import { TasklistComponent } from './lesson05/works/tasklist/tasklist.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +30,13 @@ import { SortPipe } from './lesson04/sort.pipe';
     ChildComponent,
     Lesson04Component,
     SearchPipe,
-    SortPipe
+    SortPipe,
+    Lesson05Component,
+    HomeComponent,
+    WorksComponent,
+    CenzorComponent,
+    UserlistComponent,
+    TasklistComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,11 @@
+<div class="container">
+   <div class="wrapper">
+      <h1>Plan your day!</h1>
+      <h2>User: Oleksandr Dolbnia. Count of tasks <b>{{count}}</b></h2>
+      <div class="input-wraper">
+        <input type="text" id="input-task" [(ngModel)]="inputTask" name="task">
+        <input type="button" id="add" value="Add" (click)="addTaskk()">
+      </div>
+      <app-child [taskList]="taskList" (fromChild)="countTask($event)"></app-child>
+    </div>
+ </div>

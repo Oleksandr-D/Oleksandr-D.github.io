@@ -9,7 +9,7 @@ import {
   styleUrls: ['./lesson04.component.scss']
 })
 export class Lesson04Component implements OnInit {
-  public modalWindow = true;
+  public modalWindow = false;
   public field = '';
   public contacts: IContact[] = [{
       first_name: 'Vasil',

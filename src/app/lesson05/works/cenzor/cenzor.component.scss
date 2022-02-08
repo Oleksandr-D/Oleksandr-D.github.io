@@ -7,49 +7,10 @@
   font-family: 'Arial Narrow Bold', sans-serif;
 }
 
-#lesson-item {
-  display: block;
-  width: 200px;
-  height: 50px;
-  border: none;
-  background: linear-gradient(to right, #E4E5E6, #00416A);
-  box-shadow: 0px 0px 4px 1px #f1f1f1;
-  margin: 5px;
-  display: flex;
-  flex-direction: column;
-  align-content: center;
-  align-items: center;
-  font-size: 18px;
-  outline: none;
-  cursor: pointer;
-  transition: .3s linear;
+.container {
+  width: 1200px;
+  background-color: rgba(255, 255, 255, 0);
 }
-
-#lesson-item:hover {
-  transform: rotateY(15deg);
-  box-shadow: -15px 0 15px #525252;
-  color: white;
-  background: linear-gradient(to right, #E4E5E6, #00416A);
-}
-
-#lesson-item:focus:hover {
-  transform: rotateY(15deg);
-  box-shadow: -15px 0 15px #525252;
-  color: white;
-  background: linear-gradient(to right, #E4E5E6, #00416A);
-}
-
-#lesson-item:focus {
-  color: white;
-  background: linear-gradient(to right, #E4E5E6, #00416A);
-  box-shadow: 0px 0px 4px 1px #f5f5f5;
-}
-
-.lesson-item-title {
-  font-size: 10px;
-
-}
-
 
 h1,
 h2,
@@ -64,7 +25,7 @@ h4 {
   margin-top: 30px;
   margin-bottom: 30px;
   background-color: rgba(187, 187, 187, 0.411);
-  box-shadow: 0px 0px 7px 3px #9494947a;
+  box-shadow: 0px 0px 7px 3px #7a7a7a7a;
 }
 
 .bad-words {

@@ -1,0 +1,18 @@
+<div class="container">
+  <span class="title">Angular list of previous task</span>
+  <div class="btn-wraper">
+    <div class="btn-wraper-left">
+      <div class="last-works">Last works >>> </div>
+      <button [routerLink]="[ '/works/cenzor' ]" routerLinkActive="active" id="cenzor">Cenzor</button>
+      <button [routerLink]="[ '/works/userlist' ]" routerLinkActive="active" id="users">Users</button>
+      <button [routerLink]="[ '/works/tasklist' ]" routerLinkActive="active" id="task">Task</button>
+    </div>
+    <div>
+      <a [routerLink]="[ '/home' ]" routerLinkActive="active">
+        <div>Back to >>> Home</div>
+      </a>
+    </div>
+  </div>
+
+  <router-outlet></router-outlet>
+</div>
