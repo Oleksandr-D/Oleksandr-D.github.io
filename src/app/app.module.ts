@@ -18,6 +18,8 @@ import { WorksComponent } from './lesson05/works/works.component';
 import { CenzorComponent } from './lesson05/works/cenzor/cenzor.component';
 import { UserlistComponent } from './lesson05/works/userlist/userlist.component';
 import { TasklistComponent } from './lesson05/works/tasklist/tasklist.component';
+import { Lesson06Component } from './lesson06/lesson06.component';
+import { ButtonSkipTestAndTemplateComponent } from './button-skip-test-and-template/button-skip-test-and-template.component';
 
 
 
@@ -36,7 +38,9 @@ import { TasklistComponent } from './lesson05/works/tasklist/tasklist.component'
     WorksComponent,
     CenzorComponent,
     UserlistComponent,
-    TasklistComponent
+    TasklistComponent,
+    Lesson06Component,
+    ButtonSkipTestAndTemplateComponent
   ],
   imports: [
     BrowserModule,

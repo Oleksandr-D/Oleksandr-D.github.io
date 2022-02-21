@@ -1,0 +1,98 @@
+<button (click)="showModal()" id="lesson-item">Lesson 6
+  <p class="lesson-item-title">Angular blog</p>
+</button>
+<ng-container *ngIf="modalWindow">
+  <div class="wrapper">
+    <header>
+      <div class="hed-title">Angular Blog</div>
+      <div class="hed-dtn-wraper">
+        <button (click)="addPost()" *ngIf="!enterStatus" id="add-post" type="button">Add post</button>
+        <button (click)="signIn()" *ngIf="enterStatus" id="add-post" type="button">Sign in</button>
+        <button *ngIf="adminStatus" id="user-name" type="button">{{name}}</button>
+        <button (click)="signUp()" *ngIf="enterStatus" id="sign-out" type="button">Sign up</button>
+        <button (click)="signOut()" *ngIf="!enterStatus" id="sign-out" type="button">Sign out</button>
+      </div>
+    </header>
+    <main>
+      <div *ngFor="let blogs of userBlogs" class="block">
+        <div class="right-sec">
+          <div>
+            <h3>{{blogs.topic}}</h3>
+            <p class="posted">Posted by: {{blogs.postedBy}}</p>
+          </div>
+          <p>{{blogs.message}}</p>
+        </div>
+        <div class="left-sec">
+          <div class="time-data"> {{ blogs.date | date:'HH:mm, dd.MM.YYYY' }}</div>
+          <div *ngIf="blogs.postedBy === name || email === 'admin@gmail.com'"
+                class="block-btn-wraper">
+            <button (click)="editBlog(blogs)" type="button" id="btn-edit">Edit</button>
+            <button (click)="deleteBlog(blogs)" type="button" id="btn-delete">Delete</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <ng-container>
+      <div *ngIf="signInWindow" class="modal-window-wraper">
+        <div class="modal-window">
+          <h3 class="modal-title">Sign In</h3>
+          <span>Email:</span>
+          <input [(ngModel)]="email" name="email" id="em" type="email">
+          <span>Password:</span>
+          <input [(ngModel)]="password" name="password" id="paswd" type="password">
+          <p class="modal-btn-wraper">
+            <button (click)="signIn()" type="button" id="close">Close</button>
+            <button (click)="signInSubmit()" type="button" id="submit">Submit</button>
+          </p>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container>
+      <div *ngIf="addPostWindow" class="modal-window-wraper">
+        <div class="modal-window">
+          <h3 class="modal-title">Add post</h3>
+          <ng-container *ngIf="userBlogs.length === 4">
+            <div style="font-size:25px; font-weight: bolder; color:rgb(228, 2, 2)">
+              Not enough space to display blogs!</div>
+          </ng-container>
+          <span>Title:</span>
+          <input [(ngModel)]="topic" name="topic" type="text">
+          <span>Text:</span>
+          <textarea [(ngModel)]="message" name="message" type="text"></textarea>
+          <p class="modal-btn-wraper">
+            <button (click)="addPost()" type="button" id="close">Close</button>
+            <button [disabled]="!message || !topic" *ngIf="!editStatus" (click)="addPostModal()"
+                    type="button" id="submit">
+                    Post
+            </button>
+            <button [disabled]="!message || !topic" *ngIf="editStatus" (click)="savePost()"
+                    type="button" id="submit">
+                    Save
+            </button>
+          </p>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container>
+      <div *ngIf="signUpWindow" class="modal-window-wraper">
+        <div class="modal-window">
+          <h3 class="modal-title">Sign Up</h3>
+          <span>User name:</span>
+          <input [(ngModel)]="userName" name="userName" id="log" log type="text">
+          <span>Email:</span>
+          <input [(ngModel)]="email" name="email" id="em" type="email">
+          <span>Password:</span>
+          <input [(ngModel)]="password" name="password" id="paswd" type="password">
+          <p class="modal-btn-wraper">
+            <button (click)="signUp()" type="button" id="close">Close</button>
+            <button (click)="signUpSubmit()" type="button" id="submit">Submit</button>
+          </p>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="userBlogs.length === 0">
+      <div style="font-size:20px; font-weight: bolder; color:blue; margin-top:200px">
+        Create your Post.</div>
+    </ng-container>
+  </div>
+</ng-container>
