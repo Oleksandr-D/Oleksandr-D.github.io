@@ -1,0 +1,11 @@
+<div class="blog-container">
+  <div class="wraper-post" *ngFor="let post of userPost">
+    <img src="https://img.pravda.com/images/doc/e/2/e24a63f-1.jpg">
+    <h3 class="user-name">{{post.autor}}</h3>
+    <h1 class="title">{{post.title}}</h1>
+    <div class="text">{{post.text}}</div>
+  </div>
+  <ng-container *ngIf="userPost.length === 0">
+    <h5 class="empty">Posts not yet added</h5>
+  </ng-container>
+</div>

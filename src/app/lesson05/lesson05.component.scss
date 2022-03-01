@@ -53,3 +53,14 @@ a {
   outline: none;
   color: black;
 }
+
+.lesson-items {
+  width: 200px;
+  height: 40px;
+  font-size: 12px;
+  background-color: #cacaca;
+  margin: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -6,11 +6,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lesson05.component.scss']
 })
 export class Lesson05Component implements OnInit {
+  public modalWindow = false;
 
 
   constructor() { }
 
   ngOnInit(): void {
   }
- 
+   // modal window
+   showModal(): void {
+    this.modalWindow = !this.modalWindow;
+  };
 }

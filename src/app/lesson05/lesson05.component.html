@@ -1,4 +1,13 @@
-<a id="lesson-item" [routerLink]="[ '/home' ]" routerLinkActive="active">
+<a id="lesson-item" (click)="showModal()" [routerLink]="[ '/' ]" routerLinkActive="active">
   <div class="lesson-item">Lesson 5</div>
   <p class="lesson-item-title">Routes</p>
 </a>
+<ng-container *ngIf="modalWindow">
+  <div class="wrapper">
+    <a [routerLink]="[ '/home' ]" routerLinkActive="active">
+      <button class="lesson-items">Go to home component >>></button>
+    </a>
+  <router-outlet></router-outlet>
+  </div>
+
+</ng-container>

@@ -1,0 +1,41 @@
+<div class="container-admin">
+  <div class="wraper-left-admin">
+    <p>Blogs</p>
+  </div>
+  <div class="wraper-right-admin">
+    <div class="input-wraper">
+      <input type="text" [(ngModel)]="title" placeholder="title here...">
+      <textarea type="text" [(ngModel)]="text" placeholder="text here..."></textarea>
+      <input type="text" [(ngModel)]="autor" placeholder="autor here...">
+      <button *ngIf="!editStatus" (click)="addPost()"
+       [disabled]="!title || !text || !autor" class="add">Add</button>
+      <button *ngIf="editStatus" (click)="save()" 
+       [disabled]="!title || !text || !autor" class="save">Save</button>
+    </div>
+    <div class="table-wraper">
+      <table class="table">
+        <thead>
+          <tr id="row">
+            <th>Id</th>
+            <th>Title</th>
+            <th>Text</th>
+            <th>Autor</th>
+            <th>Edit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="light-row" *ngFor="let post of adminPost">
+            <td>{{post.id}}</td>
+            <td>{{post.title}}</td>
+            <td>{{post.text}}</td>
+            <td>{{post.autor}}</td>
+            <td><button (click)="editPost(post)" class="edit">Edit</button></td>
+            <td><button [disabled]="editStatus" (click)="deletePost(post)"
+               class="delete">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

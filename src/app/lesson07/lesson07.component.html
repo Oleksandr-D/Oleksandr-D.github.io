@@ -1,0 +1,17 @@
+<button (click)="showModal()" [routerLink]="[ '/' ]" id="lesson-item">Lesson 7
+  <p class="lesson-item-title"> AngularAdminBlog </p>
+  <p class="lesson-item-title"> Angular service with http request </p>
+</button>
+<ng-container *ngIf="modalWindow">
+  <div class="wrapper">
+    <header>
+      <a id="blog" [routerLink]="[ '/blog' ]" routerLinkActive="active">
+        Blog
+      </a>
+      <a id="admin" [routerLink]="[ '/admin' ]" routerLinkActive="active">
+        Admin
+      </a>
+    </header>
+    <router-outlet></router-outlet>
+  </div>
+</ng-container>

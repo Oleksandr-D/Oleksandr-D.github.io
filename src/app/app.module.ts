@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { Lesson01Component } from './lesson01/lesson01.component';
-import { FormsModule } from '@angular/forms';
 import { Lesson02Component } from './lesson02/lesson02.component';
 import { Lesson03Component } from './lesson03/lesson03.component';
 import { ChildComponent } from './lesson03/child/child.component';
@@ -20,6 +21,9 @@ import { UserlistComponent } from './lesson05/works/userlist/userlist.component'
 import { TasklistComponent } from './lesson05/works/tasklist/tasklist.component';
 import { Lesson06Component } from './lesson06/lesson06.component';
 import { ButtonSkipTestAndTemplateComponent } from './button-skip-test-and-template/button-skip-test-and-template.component';
+import { Lesson07Component } from './lesson07/lesson07.component';
+import { BlogComponentComponent } from './lesson07/blog-component/blog-component.component';
+import { AdminBlogComponentComponent } from './lesson07/admin-blog-component/admin-blog-component.component';
 
 
 
@@ -40,12 +44,16 @@ import { ButtonSkipTestAndTemplateComponent } from './button-skip-test-and-templ
     UserlistComponent,
     TasklistComponent,
     Lesson06Component,
-    ButtonSkipTestAndTemplateComponent
+    ButtonSkipTestAndTemplateComponent,
+    Lesson07Component,
+    BlogComponentComponent,
+    AdminBlogComponentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
